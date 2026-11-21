@@ -26,8 +26,10 @@ find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(plan_env REQUIRED)
 find_package(visualization_msgs REQUIRED)
-
+find_package(nav_msgs REQUIRED)
 find_package(cv_bridge REQUIRED)
+find_package(pcl_conversions REQUIRED)
+find_package(PCL REQUIRED)
 
 include_directories( 
     include
@@ -46,8 +48,11 @@ ament_target_dependencies(path_searching
   rclcpp
   rclpy
   std_msgs
+  nav_msgs
   plan_env
   cv_bridge
+  visualization_msgs
+  pcl_conversions
 ) 
 
 # target_link_libraries( path_searching

@@ -168,7 +168,7 @@ void odom_callback(const nav_msgs::msg::Odometry::SharedPtr msg) {
                             pose_stamped.pose.orientation.x % pose_stamped.pose.orientation.y %
                             pose_stamped.pose.orientation.z << std::endl;
             }
-            RCLCPP_INFO(this->get_logger(), ss.str());
+            RCLCPP_INFO_STREAM(this->get_logger(), ss.str());
 
             publish_waypoints_vis();
             publish_waypoints();

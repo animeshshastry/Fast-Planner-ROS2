@@ -29,6 +29,7 @@ find_package(Eigen3 REQUIRED)
 find_package(PCL 1.7 REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(pcl_conversions REQUIRED)
 
 include_directories(
   include
@@ -89,15 +90,18 @@ ament_target_dependencies(plan_env
   cv_bridge
   message_filters
   fast_planner
+  pcl_conversions
 )
 
 ament_target_dependencies(test_plan_env_sdf
   rclcpp
   std_msgs
+  nav_msgs
+  pcl_conversions
 )
 
 
-ament_target_dependencies(obj_generator rclcpp geometry_msgs visualization_msgs nav_msgs)
+ament_target_dependencies(obj_generator rclcpp geometry_msgs visualization_msgs nav_msgs pcl_conversions)
 
 target_link_libraries(obj_generator 
   ${PCL_LIBRARIES}

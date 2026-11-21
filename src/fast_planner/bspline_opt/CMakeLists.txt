@@ -27,6 +27,9 @@ find_package(plan_env REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(NLopt REQUIRED)
 find_package(fast_planner REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(pcl_conversions REQUIRED)
+find_package(PCL REQUIRED)
 
 include_directories( 
     include 
@@ -45,10 +48,12 @@ ament_target_dependencies(bspline_opt
     rclcpp
     rclpy
     std_msgs
+    nav_msgs
     visualization_msgs
     cv_bridge
     plan_env
     fast_planner
+    pcl_conversions
 )
 
 target_link_libraries(bspline_opt
