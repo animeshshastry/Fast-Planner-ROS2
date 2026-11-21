@@ -5,7 +5,7 @@
   <arg name="map_size_z" default=" 5.0"/>
 
   <!-- topic of your odometry such as VIO or LIO -->
-  <arg name="odom_topic" default="/state_ukf/odom" /> 
+  <arg name="odom_topic" default="/odom" /> 
 
   <node pkg="tf2_ros" name="static_transform_publisher" exec="static_transform_publisher"  args="0 0 0 0 0 0 map world" output="screen"/>
   <node pkg="tf2_ros" name="static_transform_publisher2" exec="static_transform_publisher"  args="0 0 0 0 0 0 world simulator" output="screen"/>
@@ -27,12 +27,12 @@
   <!-- camera pose: transform of camera frame in the world frame -->
   <!-- depth topic: depth image, 640x480 by value -->
   <!-- don't set cloud_topic if you already set these ones! -->
-  <arg name="camera_pose_topic" default="/pcl_render_node/camera_pose"/>
-  <arg name="depth_topic" default="/pcl_render_node/depth"/>
+  <arg name="camera_pose_topic" default="/pose"/>
+  <arg name="depth_topic" default="/depth_image"/>
 
   <!-- topic of point cloud measurement, such as from LIDAR  -->
   <!-- don't set camera pose and depth, if you already set this one! -->
-  <arg name="cloud_topic" default="/pcl_render_node/cloud"/>
+  <arg name="cloud_topic" default="/depth_image/points"/>
 
   <!-- intrinsic params of the depth camera -->
   <arg name="cx" default="321.04638671875"/>

@@ -37,7 +37,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN echo "source /opt/ros/humble/setup.bash" >> /etc/bash.bashrc
 RUN echo "source /home/workspace/install/setup.bash" >> /etc/bash.bashrc
-RUN echo "export RMW_IMPLEMENTATION=rmw_zenoh_cpp" >> /etc/bash.bashrc
+# RUN echo "export RMW_IMPLEMENTATION=rmw_zenoh_cpp" >> /etc/bash.bashrc
 RUN echo "alias zenohd='ros2 run rmw_zenoh_cpp rmw_zenohd'" >> /etc/bash.bashrc
 RUN echo "alias start='source install/setup.bash && ros2 launch plan_manage kino_replan_launch.xml'" >> /etc/bash.bashrc
 RUN echo "alias build='colcon build --symlink-install && source install/setup.bash'" >> /etc/bash.bashrc
